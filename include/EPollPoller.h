@@ -17,7 +17,8 @@ public:
 private:
     //把活跃的事件放到活跃事件的 vector 中
     void fillActiveChannels(int numEvents, ChannelList* activeChannels) const;
-
+    // 更新channel通道 其实就是调用epoll_ctl
+    void update(int operation, Channel *channel);
     using EventList = std::vector<epoll_event>;  //epoll_event的vector
     int epollfd_; //epoll_create返回的文件描述符
     EventList events_;  //定义一个数组，用于存放epoll_event

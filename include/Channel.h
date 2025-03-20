@@ -83,6 +83,9 @@ public:
     //返回fd
     int fd() const { return fd_; }
     int set_revents(int revt) { revents_ = revt; } //设置发生的具体事件
+    int index(){return index_;}  //返回Channel对象的索引
+    int events(){return events_;}  //返回fd感兴趣的事件
+    void set_index(int idx){index_=idx;}  //设置Channel对象的索引
 
 
 private:
@@ -97,6 +100,7 @@ private:
     const int fd_;   //fd,  poller监听的对象
     int events_;  //注册fd感兴趣的事件
     int revents_;  //poller返回的具体发生事件 （fd实际发生的事件）
+    int index_;  //Channel对象的索引
 
     std::weak_ptr<void> tie_;  //不会增加引用的次数，只是提供一个观察对象的方式
     bool tied_;
