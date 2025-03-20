@@ -80,6 +80,9 @@ public:
 
     //防止当channel被手动remove掉 channel还在执行回调操作
     void tie(const std::shared_ptr<void> &);
+    //返回fd
+    int fd() const { return fd_; }
+    int set_revents(int revt) { revents_ = revt; } //设置发生的具体事件
 
 
 private:
