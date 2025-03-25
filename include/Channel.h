@@ -2,8 +2,9 @@
 #include "Timestamp.h"
 #include <functional>
 #include <memory>
+#include "noncopyable.h"
 class EventLoop;
-class Channel
+class Channel:noncopyable
 {
 public:
     using ReadEventCallback=std::function<void(Timestamp)>; //使用std::function<>来定义回调类型

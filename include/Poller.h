@@ -23,7 +23,7 @@ public:
     //判断参数Channel是否在当前Poller中
     bool hasChannel(Channel* channel) const;
 
-    //EventLoop对象通过这个接口可以获取默认的IO复用的具体实现，而不需要关心具体的实现细节
+    //EventLoop对象通过这个接口可以获取默认的IO复用的具体实现，而不需要关心具体的实现细节  返回一个poller的轮询器
     static Poller* newDefaultPoller(EventLoop* loop);
 
 protected:  //protected成员可以被派生类访问 而privated成员不能被派生类访问
