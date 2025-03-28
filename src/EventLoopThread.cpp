@@ -27,10 +27,7 @@ EventLoop *EventLoopThread::startLoop()  //开启循环
     EventLoop *loop=nullptr;
     {
         std::unique_lock<std::mutex> lock(mutex_);
-        while(loop_==nullptr)
-        {
-            cond_.wait(lock);   //等待条件变量
-        }
+        cond_.wait(lock,[this]{return loop_!=nullptr;});  //等待loop_指向一个EventLoop对象
         loop=loop_;
     }
     return loop;  //返回一个EventLoop对象指针
