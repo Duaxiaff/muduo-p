@@ -35,5 +35,5 @@ void Logger::log(std::string msg)
     }
 
     //打印日志
-    std::cout<<pre+Timestamp::now().toString()<<" : "<<msg<<std::endl;
+    std::cout<<pre+Timestamp::now().to_String()<<" : "<<msg<<std::endl;
 }
