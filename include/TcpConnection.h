@@ -39,7 +39,7 @@ public:
     bool connected()const {return state_==kConnected;} //判断连接是否成功
 
     //发送数据
-    void send(const void* message,int len);
+    void send(const std::string &buf);
 
     //关闭半连接
     void shutdown();
