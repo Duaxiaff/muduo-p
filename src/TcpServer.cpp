@@ -18,7 +18,7 @@ static EventLoop *checkLoopNodtNull(EventLoop *loop)
 TcpServer::TcpServer(EventLoop *loop,
     const InetAddress &listenAddr,
     const std::string &nameArg,
-    Option option = kNoReusePort)
+    Option option)
     :loop_(checkLoopNodtNull(loop))
     ,ipPort_(listenAddr.toIpPort())
     ,name_(nameArg)

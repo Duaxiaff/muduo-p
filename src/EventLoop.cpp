@@ -162,7 +162,7 @@ void EventLoop::removeChannel(Channel *channel)  //删除现在的channel
 }
 bool EventLoop::hasChannel(Channel *channel)   //判断channel是否在poller中
 {
-    poller_->hasChannel(channel);
+    return poller_->hasChannel(channel);
 }
 
 void EventLoop::doPendingFunctors()

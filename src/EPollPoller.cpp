@@ -53,6 +53,7 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList* activeChannels)
             LOG_ERROR("EPollPoller::poll() error!\n");
         }
     }
+    return now;
     
 }
 //fd上的感兴趣的事件发生变化，调用update函数，将channel添加到epoll实例中

@@ -4,6 +4,7 @@
 #include "InetAddress.h"
 #include "noncopyable.h"
 #include "EventLoopThreadPoll.h"
+#include "TcpConnection.h"
 #include "Callbacks.h"
 #include <string>
 #include <functional>

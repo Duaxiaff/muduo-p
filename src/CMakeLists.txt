@@ -1,5 +1,5 @@
 #获取当前目录下的所有源文件
-file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.cc)
+file(GLOB SRC_FILES ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 
 #创建静态库或共享库
 add_library(muduo_p SHARED ${SRC_FILES})

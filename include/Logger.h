@@ -5,12 +5,12 @@
 //这个宏接受一个格式字符串logmsgFormat，接受一个可变参数列表
 //snprintf用于格式化字符串并将其写入到指定的缓冲区中
 //##__VA_ARGS__：这是一个特殊的宏预处理运算符，用于处理宏中的可变参数（即 ...）
-#define LOG_INFO(logmsgFormat, ...)                     \     
+#define LOG_INFO(logmsgFormat, ...)                     \
     do{                                                 \
         Logger &logger = Logger::instance();            \
         logger.setLogLevel(INFO);                       \
         char buf[1024] = {0};                           \
-        snprintf(buf, 1024,logmsgFormat,##__VA_ARGS__); \  
+        snprintf(buf, 1024,logmsgFormat,##__VA_ARGS__); \
         logger.log(buf);                                \
     }while(0)
 
@@ -19,7 +19,7 @@
         Logger &logger = Logger::instance();            \
         logger.setLogLevel(ERROR);                      \
         char buf[1024] = {0};                           \
-        snprintf(buf, 1024,logmsgFormat,##__VA_ARGS__); \  
+        snprintf(buf, 1024,logmsgFormat,##__VA_ARGS__); \
         logger.log(buf);                                \
     }while(0)
 
@@ -28,7 +28,7 @@
         Logger &logger = Logger::instance();            \
         logger.setLogLevel(FATAL);                      \
         char buf[1024] = {0};                           \
-        snprintf(buf, 1024,logmsgFormat,##__VA_ARGS__); \  
+        snprintf(buf, 1024,logmsgFormat,##__VA_ARGS__); \
         logger.log(buf);                                \
     }while(0)
 
@@ -38,7 +38,7 @@ do{                                                 \
     Logger &logger = Logger::instance();            \
     logger.setLogLevel(DEBUG);                      \
     char buf[1024] = {0};                           \
-    snprintf(buf, 1024,logmsgFormat,##__VA_ARGS__); \  
+    snprintf(buf, 1024,logmsgFormat,##__VA_ARGS__); \
     logger.log(buf);                                \
 }while(0)
 #else

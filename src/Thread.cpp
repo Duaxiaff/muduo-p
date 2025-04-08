@@ -1,8 +1,8 @@
 #include "Thread.h"
 #include <semaphore.h>
 #include "CurrentThread.h"
-static std::atomic_int numCreated_(0);  //已经创建的线程数
 
+std::atomic_int Thread::numCreated_(0);  //已经创建的线程数
 Thread::Thread(ThreadFunc func,const std::string& name)
 :started_(false)
 ,joined_(false)

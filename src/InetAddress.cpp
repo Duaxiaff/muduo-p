@@ -1,7 +1,7 @@
 #include "InetAddress.h"
 #include <strings.h>
 #include <string.h>
-InetAddress::InetAddress(uint16_t port,std::string ip = "127.0.0.1")
+InetAddress::InetAddress(uint16_t port,std::string ip )
 {
     ::memset(&addr_,0,sizeof(addr_));   //初始化置为0  之后就是addr_的结构填写
     addr_.sin_family = AF_INET;  //表示这是一个IPv4地址

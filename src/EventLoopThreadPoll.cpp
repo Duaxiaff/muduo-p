@@ -17,7 +17,7 @@ EventLoopThreadPoll::~EventLoopThreadPoll()
 
 
 
-void EventLoopThreadPoll::start(const ThreadInitCallback &cb=ThreadInitCallback())  //启动线程池
+void EventLoopThreadPoll::start(const ThreadInitCallback &cb)  //启动线程池
 {
     started_=true;
     for(int i=0;i<numThreads_;++i)

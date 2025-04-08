@@ -83,7 +83,7 @@ public:
     void tie(const std::shared_ptr<void> &);
     //返回fd
     int fd() const { return fd_; }
-    int set_revents(int revt) { revents_ = revt; } //设置发生的具体事件
+    void set_revents(int revt) {revents_ = revt; } //设置发生的具体事件
     int index(){return index_;}  //返回Channel对象的索引
     int events(){return events_;}  //返回fd感兴趣的事件
     void set_index(int idx){index_=idx;}  //设置Channel对象的索引
