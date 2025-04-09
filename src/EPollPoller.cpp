@@ -115,12 +115,14 @@ void EPollPoller::update(int operation, Channel *channel)
 {
     epoll_event event;
     ::memset(&event,0,sizeof(event));  //将event结构体的所有字节初始化为0 确保结构体被初始化
+
     int fd=channel->fd();
+    
     event.events=channel->events();  //设置event的events
     event.data.fd=fd;  //设置event的data.fd
     event.data.ptr=channel;  //设置event的data.ptr
-    int result=::epoll_ctl(epollfd_,operation,fd,&event);  //调用epoll_ctl函数，将channel添加到epoll实例中
-    if(result<0)
+    //int result=::epoll_ctl(epollfd_,operation,fd,&event);  //调用epoll_ctl函数，将channel添加到epoll实例中
+    if(::epoll_ctl(epollfd_, operation, fd, &event) < 0)
     {
         if (operation == EPOLL_CTL_DEL)
         {

@@ -22,8 +22,8 @@ TcpServer::TcpServer(EventLoop *loop,
     :loop_(checkLoopNodtNull(loop))
     ,ipPort_(listenAddr.toIpPort())
     ,name_(nameArg)
-    ,acceptor_(new Acceptor(loop_,listenAddr,option == kReusePort))     //创建acceptor
-    ,threadPool_(new EventLoopThreadPoll(loop_,name_))     //创建线程池
+    ,acceptor_(new Acceptor(loop,listenAddr,option == kReusePort))     //创建acceptor
+    ,threadPool_(new EventLoopThreadPoll(loop,name_))     //创建线程池
     ,connectionCallback_()
     ,messageCallback_()
     ,nextConnId_(1)

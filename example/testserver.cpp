@@ -49,7 +49,7 @@ int main()
 {
     EventLoop loop;
     InetAddress addr(8080);  //端口号是8080 ip是默认的"127.0.0.1"
-    EchoServer server(&loop,addr,"EchoServer");
+    EchoServer server(&loop,addr,"EchoServer-01");
     server.start();    //相当于是启动的listen
     loop.loop();  //开启事件循环
     return 0;
